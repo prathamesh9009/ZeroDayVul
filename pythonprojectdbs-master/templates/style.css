@@ -1,0 +1,93 @@
+/* Styles for Navbar */
+.navbar {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase
+}
+.nav-link {
+  color: #444;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+.nav-item.active .nav-link {
+  color: #007bff;
+}
+
+/* Styles for Dropdown */
+.dropdown-menu {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+.dropdown-item {
+  color: #444;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+/* Body style */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Login box style */
+.login-box {
+  width: 350px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 100px auto;
+  padding: 20px;
+}
+
+/* Title style */
+.login-box h2 {
+  text-align: center;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+/* Form style */
+.login-form {
+  margin-top: 20px;
+}
+
+/* Input field style */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Submit button style */
+.login-form input[type="submit"] {
+  width: 100%;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: #4a4a4a;
+}
+
+
+
