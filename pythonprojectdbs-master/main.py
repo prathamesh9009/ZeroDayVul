@@ -16,7 +16,7 @@ conn = psycopg2.connect(
 def home():
     return render_template("Homepage.html")
 
-@app.route("/sucess")
+@app.route("/user_successful_registration")
 def user_successful_registration():
     return render_template('reg.html')
 
