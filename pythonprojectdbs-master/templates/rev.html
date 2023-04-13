@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Shell Generator for C2</title>
+    <style>
+        body {
+            background-image: url("background-image.jpg");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            background-color: #fcfcfc;
+            width: 50%;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #333333;
+            text-align: center;
+            margin-top: 0px;
+        }
+        p {
+            color: #333333;
+            font-size: 16px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 4.5px;
+            margin-bottom: 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333333;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        select {
+            height: 40px;
+        }
+        button {
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+        }
+        button:hover {
+            background-color: #ffffff;
+            color: #333333;
+        }
+        #result {
+            background-color: #7d7878;
+            color: #333333;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 50px;
+            font-size: 16px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Reverse Shell Generator</h1>
+        <p>Enter the following data:</p>
+        <form>
+            <label for="ip">IP:</label>
+            <input type="text" id="ip">
+            <label for="port">PORT:</label>
+            <input type="text" id="port">
+            <label for="type">TYPE:</label>
+            <select name="type" id="type">
+                <option value="">Please choose an option</option>
+                <option value="bash">Bash</option>
+                <option value="python">Python</option>
+                <option value="netcat">Netcat</option>
+                <option value="php">PHP</option>
+                <option value="powershell">Powershell</option>
+                <option value="icmp">ICMP</option>
+                <option value="dns">DNS</option>
+            </select>
+            <br>
+            <button type="submit" id="submit">Create</button>
+        </form>
+    <script src="./script.js"></script>
+</body>
+</html>
