@@ -16,6 +16,7 @@ conn = psycopg2.connect(
 def home():
     return render_template("Homepage.html")
 
+#Redirection from Homepage to indexpage
 @app.route('/index')
 def index():
     return render_template('index.html')
@@ -23,6 +24,15 @@ def index():
 @app.route('/redirect', methods=['POST'])
 def redirect_to_index():
     return redirect(url_for('index'))
+
+#Redirection from indexpage to all the tabs in navbar
+@app.route('/homepage')
+def homepage():
+    return render_template('Homepage.html')
+
+@app.route('/redirect', methods=['GET'])
+def redirect_to_homepage():
+    return redirect(url_for('homepage'))
 
 @app.route("/user_successful_registration")
 def user_successful_registration():
