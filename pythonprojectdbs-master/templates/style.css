@@ -88,76 +88,128 @@ body {
 .login-form input[type="submit"]:hover {
   background-color: #4a4a4a;
 }
-
-/* Style for the body */
-body {
-	background-color: #f2f2f2;
-	color: black;
-	font-family: Arial, sans-serif;
-	font-size: 16px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-}
-
-/* Style for the container */
-.container {
-	background-color: white;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-	width: 50%;
-}
-
-/* Style for the input boxes */
-input[type=text] {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	box-sizing: border-box;
-	border: 2px solid #ccc;
-	border-radius: 4px;
-	background-color: #f8f8f8;
-	color: black;
-}
-
-/* Style for the tabs */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  margin-top: 20px;
-}
-
-/* Style for tab links */
-.tab button {
-  background-color: inherit;
-  float: left;
+.button {
   border: none;
-  outline: none;
+  border-radius: 4px;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 0.6s;
   cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
 }
 
-/* Style for active tab link */
-.tab button.active {
-  background-color: #ccc;
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
 }
 
-/* Style for tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 
-/* Style for active tab content */
-.tabcontent.active {
-  display: block;
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+/* Global styles */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	color: #333;
+	background-color: #f9f9f9;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+
+/* Header styles */
+header {
+	text-align: center;
+	margin-bottom: 40px;
+	opacity: 0;
+	transform: translateY(-50%);
+	animation: fade-in 1s ease forwards;
+}
+
+h1 {
+	font-size: 48px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+p {
+	font-size: 24px;
+	font-weight: bold;
+	color: #555;
+	margin-bottom: 20px;
+	text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+/* Section styles */
+section {
+	background-color: #fff;
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+	opacity: 0;
+	transform: translateY(50%);
+	animation: slide-up 1s ease forwards;
+}
+
+h2 {
+	font-size: 36px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+ul {
+	list-style: none;
+	margin-bottom: 20px;
+}
+
+li {
+	font-size: 24px;
+	margin-bottom: 10px;
+	text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+a.button {
+	display: inline-block;
+	background-color: #ff8a00;
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 20px 40px;
+	border-radius: 10px;
+	text-decoration: none;
+	opacity: 0;
+	transform: translateY(50%);
+	animation: slide-up 1s ease 1s forwards;
+	box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
 }
 
 
