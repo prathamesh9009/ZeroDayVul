@@ -16,6 +16,14 @@ conn = psycopg2.connect(
 def home():
     return render_template("Homepage.html")
 
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+@app.route('/redirect', methods=['POST'])
+def redirect_to_index():
+    return redirect(url_for('index'))
+
 @app.route("/user_successful_registration")
 def user_successful_registration():
     return render_template('reg.html')
