@@ -20,18 +20,18 @@
         <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="reg.html">Registration</a>
+        <a class="nav-link" href="reg.html">Sign up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="affliate.html">Become an Affiliate</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Contact
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Email</a>
-          <a class="dropdown-item" href="#">Contact</a>
+          <a class="dropdown-item" href="email.html">Email</a>
+          <a class="dropdown-item" href="contact.html">Contact</a>
         </div>
       </li>
     </ul>
@@ -45,18 +45,19 @@
     <title>Login Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  <body>
-    <div class="login-box">
-      <h2>Login</h2>
-      <form class="login-form" action="#" method="post">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" value="Login">
-        <center>
-        <a href="reg.html" >Sign Up</a>
-        </center>
-      </form>
-    </div>
+ <body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form class="login-form" action="#" method="post">
+      <input type="text" name="username" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" class="button button1" value="Login">
+
+    </form>
+    <center>
+        <button class="button button2" onclick="window.location.href='reg.html'">Register</button>
+      </center>
+  </div>
 </body>
 </html>
 
