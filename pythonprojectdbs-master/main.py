@@ -14,8 +14,8 @@ conn = psycopg2.connect(
 
 # home page
 @app.route("/")
-def home():
-    return render_template("Homepage.html")
+def index():
+    return render_template("index.html")
 
 
 @app.route("/reg")
