@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input Boxes and Tabs</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="C:\Users\pc\Downloads\bootstrap-5.3.0-alpha3-dist.zip\bootstrap-5.3.0-alpha3-dist\css">
+<script src="C:\Users\pc\Downloads\bootstrap-5.3.0-alpha3-dist.zip\bootstrap-5.3.0-alpha3-dist\js"></script>
+
+</head>
+<body>
+
+<div class="container">
+	<!-- Tabs -->
+	<div class="tab">
+	  <button class="tablinks" onclick="openTab(event, 'Reverse')">Reverse</button>
+	  <button class="tablinks" onclick="openTab(event, '0day')">0day</button>
+	  <button class="tablinks" onclick="openTab(event, 'MSFVenom')">MSFVenom</button>
+	  <button class="tablinks" onclick="openTab(event, 'Hoaxshell')">Hoaxshell</button>
+	</div>
+
+	<!-- Tab content -->
+	<div id="Reverse" class="tabcontent">
+	  <h3>Reverse</h3>
+	  <p>Content for Reverse tab goes here.</p>
+	</div>
+
+	<div id="0day" class="tabcontent">
+	  <h3>0day</h3>
+	  <p>Content for 0day tab goes here.</p>
+	</div>
+
+	<div id="MSFVenom" class="tabcontent">
+	  <h3>MSFVenom</h3>
+	  <p>Content for MSFVenom tab goes here.</p>
+	</div>
+
+	<div id="Hoaxshell" class="tabcontent">
+	  <h3>Hoaxshell</h3>
+	  <p>Content for Hoaxshell tab goes here.</p>
+	</div>
+    </div>
+
+	<script>
+		function openTab(evt, tabName) {
+		  var i, tabcontent, tablinks;
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+		    tabcontent[i].style.display = "none";
+		  }
+		  tablinks = document.getElementsByClassName("tablinks");
+		  for (i = 0; i < tablinks.length; i++) {
+		    tablinks[i].className = tablinks[i].className.replace(" active", "");
+		  }
+		  document.getElementById(tabName).style.display = "block";
+		  evt.currentTarget.className += " active";
+		}
+	</script>
+<script type="module">
+  import { Toast } from 'bootstrap.esm.min.js'
+
+  Array.from(document.querySelectorAll('.toast'))
+    .forEach(toastNode => new Toast(toastNode))
+</script>
+
+</body>
+</html>
