@@ -12,13 +12,12 @@ conn = psycopg2.connect(
     password="root"
 )
 
-# home page
+#Homepage
 @app.route("/")
-def index():
-    return render_template("index.html")
+def home():
+    return render_template("Homepage.html")
 
-
-@app.route("/reg")
+@app.route("/")
 def user_successful_registration():
     return render_template('reg.html')
 
@@ -41,7 +40,6 @@ def register():
         return redirect(url_for('user_successful_registration'))
 
     return render_template("reg.html")
-
 
 if __name__ == "__main__":
     app.run()
