@@ -11,13 +11,12 @@ conn = psycopg2.connect(
     user="admin",
     password="root"
 )
-
 #Homepage
 @app.route("/")
 def home():
     return render_template("Homepage.html")
 
-@app.route("/")
+@app.route("/sucess")
 def user_successful_registration():
     return render_template('reg.html')
 
