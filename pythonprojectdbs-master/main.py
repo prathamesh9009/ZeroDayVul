@@ -92,5 +92,27 @@ def register():
 
     return render_template("reg.html")
 
+#Login connectivity
+@app.route('/index', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        # Get the username and password from the form
+        username = request.form['username']
+        password = request.form['password']
+
+        # Query the database for the user's credentials
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM users WHERE username=%s AND password=%s", (username, password))
+        user = cur.fetchone()
+
+        if user:
+            # User is authenticated, redirect to the rev.html page
+            return redirect('/rev.html')
+        else:
+            # Authentication failed, redirect to the error.html page
+            return redirect('/error.html')
+    else:
+        return redirect('/index.html')
+
 if __name__ == "__main__":
     app.run()
