@@ -38,7 +38,6 @@ def redirect_to_homepage():
 def user_successful_registration():
     return render_template('reg.html')
 
-
 # registration page
 @app.route("/register", methods=["GET", "POST"])
 def register():
