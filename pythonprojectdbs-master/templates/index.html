@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="Homepage.html">Zero Day Market</a>
+  <a class="navbar-brand" href="{{ url_for('redirect_to_homepage') }}">
+    Zero Day Market
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,18 +22,18 @@
         <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="reg.html">Sign up</a>
+        <a class="nav-link" href="{{ url_for('user_successful_registration') }}">Sign up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="affliate.html">Become an Affiliate</a>
+        <a class="nav-link" href="{{ url_for('affliate') }}">Become an Affiliate</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Contact
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="email.html">Email</a>
-          <a class="dropdown-item" href="contact.html">Contact</a>
+          <a class="dropdown-item" href="{{ url_for('email')}}">Email</a>
+          <a class="dropdown-item" href="{{ url_for('contact')}}">Contact</a>
         </div>
       </li>
     </ul>
@@ -43,7 +45,7 @@
 <html>
   <head>
     <title>Login Page</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   </head>
  <body>
   <div class="login-box">
@@ -52,7 +54,6 @@
       <input type="text" name="username" placeholder="Username">
       <input type="password" name="password" placeholder="Password">
       <input type="submit" class="button button1" value="Login">
-
     </form>
     <center>
         <button class="button button2" onclick="window.location.href='reg.html'">Register</button>

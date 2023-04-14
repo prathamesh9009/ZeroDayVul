@@ -11,17 +11,67 @@ conn = psycopg2.connect(
     user="admin",
     password="root"
 )
-
-# home page
+#Homepage
 @app.route("/")
 def home():
     return render_template("Homepage.html")
 
+#Redirection from Homepage to indexpage
+@app.route('/index')
+def index():
+    return render_template('index.html')
 
-@app.route("/reg")
+@app.route('/redirect', methods=['POST'])
+def redirect_to_index():
+    return redirect(url_for('index'))
+
+#Redirection from indexpage to all the tabs in navbar
+@app.route('/homepage')
+def homepage():
+    return render_template('Homepage.html')
+
+@app.route('/redirect', methods=['GET'])
+def redirect_to_homepage():
+    return redirect(url_for('homepage'))
+
+#Redirection from indexpage navbar to affilate
+@app.route('/affliate')
+def affliate():
+    return render_template('affliate.html')
+
+@app.route('/redirect_affliate', methods=['POST'])
+def redirect_to_affliate_handler():
+    return redirect(url_for('affliate'))
+
+#Redirection from indexpage navbar to contacts
+@app.route('/email')
+def email():
+    return render_template('email.html')
+
+@app.route('/redirect', methods=['POST'])
+def redirect_to_email():
+    return redirect(url_for('email'))
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/redirect', methods=['POST'])
+def redirect_to_contact():
+    return redirect(url_for('contact'))
+
+@app.route("/user_successful_registration")
 def user_successful_registration():
     return render_template('reg.html')
 
+#Redirection from login to Reverseshell
+@app.route('/rev')
+def rev():
+    return render_template('rev.html')
+
+@app.route('/redirect', methods=['POST'])
+def redirect_to_rev():
+    return redirect(url_for('rev'))
 
 # registration page
 @app.route("/register", methods=["GET", "POST"])
@@ -41,7 +91,6 @@ def register():
         return redirect(url_for('user_successful_registration'))
 
     return render_template("reg.html")
-
 
 if __name__ == "__main__":
     app.run()
