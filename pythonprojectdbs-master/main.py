@@ -43,7 +43,22 @@ def affliate():
 def redirect_to_affliate_handler():
     return redirect(url_for('affliate'))
 
-#Redirection from indexpage navbar to 
+#Redirection from indexpage navbar to contacts
+@app.route('/email')
+def email():
+    return render_template('email.html')
+
+@app.route('/redirect', methods=['POST'])
+def redirect_to_email():
+    return redirect(url_for('email'))
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/redirect', methods=['POST'])
+def redirect_to_contact():
+    return redirect(url_for('contact'))
 
 @app.route("/user_successful_registration")
 def user_successful_registration():
