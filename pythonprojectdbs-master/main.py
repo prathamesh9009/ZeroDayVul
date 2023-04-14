@@ -64,6 +64,15 @@ def redirect_to_contact():
 def user_successful_registration():
     return render_template('reg.html')
 
+#Redirection from login to Reverseshell
+@app.route('/rev')
+def rev():
+    return render_template('rev.html')
+
+@app.route('/redirect', methods=['POST'])
+def redirect_to_rev():
+    return redirect(url_for('rev'))
+
 # registration page
 @app.route("/register", methods=["GET", "POST"])
 def register():
