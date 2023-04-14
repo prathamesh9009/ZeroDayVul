@@ -34,6 +34,15 @@ def homepage():
 def redirect_to_homepage():
     return redirect(url_for('homepage'))
 
+#Redirection from indexpage navbar to affilate
+@app.route('/affliate')
+def affliate():
+    return render_template('affliate.html')
+
+@app.route('/redirect_affliate', methods=['POST'])
+def redirect_to_affliate_handler():
+    return redirect(url_for('affliate'))
+
 @app.route("/user_successful_registration")
 def user_successful_registration():
     return render_template('reg.html')
