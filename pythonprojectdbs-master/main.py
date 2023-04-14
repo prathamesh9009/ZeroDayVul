@@ -43,6 +43,8 @@ def affliate():
 def redirect_to_affliate_handler():
     return redirect(url_for('affliate'))
 
+#Redirection from indexpage navbar to 
+
 @app.route("/user_successful_registration")
 def user_successful_registration():
     return render_template('reg.html')
