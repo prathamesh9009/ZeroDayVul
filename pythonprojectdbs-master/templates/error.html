@@ -22,7 +22,7 @@
 </head>
 <nav class="navbar navbar-dark bg-dark">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="Homepage.html">Zero Day Market</a>
+		<a class="navbar-brand" href="{{ url_for('redirect_to_homepage') }}">Zero Day Market</a>
 		  </div>
   </nav>
 
@@ -32,8 +32,9 @@
       </br>
       <div class="row">
         <div class="col-sm-4 mx-auto">
-          <a class="btn btn-success btn-lg btn-block" href="Homepage.html" role="button">Homepage</a>
-          <a class="btn btn-warning btn-lg btn-block" href="index.html" role="button">Login</a>
+          <form action="{{ url_for('redirect_to_index') }}" method="POST">
+            <button class="btn btn-warning btn-lg btn-block" type="submit">login</button>
+            </form>	
         </div>
 		<br>
 		  <div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -47,5 +48,4 @@
 	
   </div>
 </body>
-
 </html>

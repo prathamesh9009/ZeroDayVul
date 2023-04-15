@@ -27,14 +27,9 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ url_for('affliate') }}">Become an Affiliate</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Contact
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="{{ url_for('email')}}">Email</a>
-          <a class="dropdown-item" href="{{ url_for('contact')}}">Contact</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('contact')}}">contact</a>
+      </li>
       </li>
     </ul>
   </div>
@@ -54,10 +49,9 @@
     <form class="login-form" action="/login" method="post">
       <input type="text" name="username" placeholder="Username">
       <input type="password" name="password" placeholder="Password">
-      <input type="submit" class="button button1" value="Login">
     </form>
     <center>
-        <button class="button button2" onclick="window.location.href='reg.html'">Register</button>
+      <input type="submit" class="button button1" value="Login">
       </center>
   </div>
 </body>
