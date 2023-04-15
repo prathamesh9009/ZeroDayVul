@@ -129,6 +129,35 @@ def login():
 @app.route('/static/js/<path:path>')
 def send_js(path):
     return send_from_directory('static/js', path)
+
+#Contact form Connection
+@app.route('/cont', methods=['GET', 'POST'])
+def cont():
+    # Check if the form has been submitted
+    if request.method == 'POST':
+        # Get the form data
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+
+        # Connect to the database
+        conn = psycopg2.connect(
+            host="localhost",
+            dbname="zerovuldb",
+            user="admin",
+            password="root"
+        )
+        cur = conn.cursor()
+        cur.execute("INSERT INTO contactinfo (name, email, message) VALUES (%s, %s, %s)", (name, email, message))
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        # Redirect to a thank-you page
+        return render_template('thank.html')
+    else:
+        # If the form hasn't been submitted, render the contact page
+        return render_template('contact.html')
     
 if __name__ == "__main__":
     app.run()
