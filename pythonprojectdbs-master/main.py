@@ -60,18 +60,19 @@ def contact():
 def redirect_to_contact():
     return redirect(url_for('contact'))
 
-@app.route("/user_successful_registration")
-def user_successful_registration():
-    return render_template('reg.html')
-
-#Redirection from login to Reverseshell
+# Redirection from login to reverseshell
 @app.route('/rev')
 def rev():
     return render_template('rev.html')
 
-@app.route('/redirect', methods=['POST'])
+@app.route('/redirect_rev', methods=['POST'])
 def redirect_to_rev():
     return redirect(url_for('rev'))
+
+
+@app.route("/user_successful_registration")
+def user_successful_registration():
+    return render_template('reg.html')
 
 # registration page
 @app.route("/register", methods=["GET", "POST"])
@@ -92,8 +93,16 @@ def register():
 
     return render_template("reg.html")
 
+@app.route("/user_login_auth")
+def user_login_auth():
+    return render_template('rev.html')
+
+@app.route("/user_login_fail")
+def user_login_fail():
+    return render_template('error.html')
+
 #Login connectivity
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
         # Get the username and password from the form
@@ -107,12 +116,15 @@ def login():
 
         if user:
             # User is authenticated, redirect to the rev.html page
-            return redirect('/rev.html')
+            return redirect(url_for('user_login_auth'))
         else:
             # Authentication failed, redirect to the error.html page
-            return redirect('/error.html')
+            return redirect(url_for('user_login_fail'))
+        
     else:
-        return redirect('/index.html')
-
+        # Handle GET request for displaying the login form
+        return render_template('index.html')
+        
+    
 if __name__ == "__main__":
     app.run()
