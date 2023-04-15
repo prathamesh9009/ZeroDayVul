@@ -102,7 +102,7 @@ def user_login_fail():
     return render_template('error.html')
 
 #Login connectivity
-@app.route('/login', methods=['GET','POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         # Get the username and password from the form
@@ -112,9 +112,9 @@ def login():
         # Query the database for the user's credentials
         cur = conn.cursor()
         cur.execute("SELECT * FROM users WHERE username=%s AND password=%s", (username, password))
-        user = cur.fetchone()
+        users = cur.fetchone()
 
-        if user:
+        if users:
             # User is authenticated, redirect to the rev.html page
             return redirect(url_for('user_login_auth'))
         else:
@@ -124,7 +124,7 @@ def login():
     else:
         # Handle GET request for displaying the login form
         return render_template('index.html')
-    
+
 # Serve script.js
 @app.route('/static/js/<path:path>')
 def send_js(path):
