@@ -1,5 +1,5 @@
 import email
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory 
 import psycopg2
 
 app = Flask(__name__)
@@ -124,7 +124,11 @@ def login():
     else:
         # Handle GET request for displaying the login form
         return render_template('index.html')
-        
+    
+# Serve script.js
+@app.route('/static/js/<path:path>')
+def send_js(path):
+    return send_from_directory('static/js', path)
     
 if __name__ == "__main__":
     app.run()

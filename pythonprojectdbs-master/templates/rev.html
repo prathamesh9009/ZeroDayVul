@@ -4,7 +4,6 @@
     <title>Reverse Shell Generator for C2</title>
     <style>
         body {
-            background-image: url("background-image.jpg");
             background-size: cover;
             font-family: Arial, sans-serif;
         }
@@ -74,11 +73,11 @@
     <div id="container">
         <h1>Reverse Shell Generator</h1>
         <p>Enter the following data:</p>
-        <form>
+        <form action="#" method="GET">
             <label for="ip">IP:</label>
-            <input type="text" id="ip">
+            <input type="text" id="ip" name="ip">
             <label for="port">PORT:</label>
-            <input type="text" id="port">
+            <input type="text" id="port" name="port">
             <label for="type">TYPE:</label>
             <select name="type" id="type">
                 <option value="">Please choose an option</option>
@@ -93,6 +92,6 @@
             <br>
             <button type="submit" id="submit">Create</button>
         </form>
-    <script src="./script.js"></script>
+    <script src="{{ url_for('send_js', path='script.js') }}"></script>
 </body>
 </html>
