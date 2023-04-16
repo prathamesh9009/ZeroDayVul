@@ -3,6 +3,7 @@
 <head>
 	<title>Contact Us</title>
 	<style>
+		/* Code Taken from stackoverflow */
 		body {
 			background-color: #f2f2f2;
 			font-family: Arial, sans-serif;
@@ -70,6 +71,7 @@
 	</style>
 </head>
 <body>
+	<!-- Code Taken from w3school -->
 	<div class="container">
 		<h1>Contact Us</h1>
 		<form action="/cont" method="POST">
@@ -82,8 +84,8 @@
 			<label for="message">Message:</label>
 			<textarea id="message" name="message" placeholder="Write something.." required></textarea>
 
-			<input type="submit" value="Submit">
-			<button class="button button2" formaction="{{ url_for('redirect_to_index') }}">Back</button>
+			<input type="submit" formaction="{{ url_for('thank')}}" value="Submit">
+			<button class="button button2" formaction="index.html">Back</button>
 		</form>
 
 	</div>

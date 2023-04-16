@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+   
+    <!-- Reverseshell code take from 'https://www.revshells.com/' -->
     <title>Reverse Shell Generator for C2</title>
     <style>
         body {
+            background-image: url("background-image.jpg");
             background-size: cover;
             font-family: Arial, sans-serif;
         }
@@ -73,11 +76,11 @@
     <div id="container">
         <h1>Reverse Shell Generator</h1>
         <p>Enter the following data:</p>
-        <form action="#" method="GET">
+        <form>
             <label for="ip">IP:</label>
-            <input type="text" id="ip" name="ip">
+            <input type="text" id="ip">
             <label for="port">PORT:</label>
-            <input type="text" id="port" name="port">
+            <input type="text" id="port">
             <label for="type">TYPE:</label>
             <select name="type" id="type">
                 <option value="">Please choose an option</option>
@@ -92,6 +95,7 @@
             <br>
             <button type="submit" id="submit">Create</button>
         </form>
-    <script src="{{ url_for('send_js', path='script.js') }}"></script>
+         <!-- HTML and CSS taken from w3school -->
+    <script src=".\script.js"></script>
 </body>
 </html>
