@@ -43,23 +43,6 @@ def affliate():
 def redirect_to_affliate_handler():
     return redirect(url_for('affliate'))
 
-#Redirection from indexpage navbar to contacts
-@app.route('/email')
-def email():
-    return render_template('email.html')
-
-@app.route('/redirect', methods=['POST'])
-def redirect_to_email():
-    return redirect(url_for('email'))
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
-@app.route('/redirect', methods=['POST'])
-def redirect_to_contact():
-    return redirect(url_for('contact'))
-
 # Redirection from login to reverseshell
 @app.route('/rev')
 def rev():
@@ -158,6 +141,23 @@ def cont():
     else:
         # If the form hasn't been submitted, render the contact page
         return render_template('contact.html')
+    
+@app.route('/ind')
+def ind():
+    return render_template('index.html')
+
+@app.route('/signin')
+def signin():
+    return redirect(url_for('ind'))
+
+#Redirection from indexpage navbar to contacts
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/redirect', methods=['POST'])
+def redirect_to_contact():
+    return redirect(url_for('contact'))
     
 if __name__ == "__main__":
     app.run()
