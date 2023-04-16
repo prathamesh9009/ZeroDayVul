@@ -151,13 +151,13 @@ def signin():
     return redirect(url_for('ind'))
 
 #Redirection from indexpage navbar to contacts
-@app.route('/contact')
+@app.route("/contact")
 def contact():
-    return render_template('contact.html')
+    return redirect(url_for("contact_page"))
 
-@app.route('/redirect', methods=['POST'])
-def redirect_to_contact():
-    return redirect(url_for('contact'))
-    
+@app.route("/contact-page")
+def contact_page():
+    return render_template("contact.html")
+
 if __name__ == "__main__":
     app.run()
