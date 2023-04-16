@@ -1,7 +1,7 @@
 # 🐍 Python Project DBS
 Advanced Programming Techniques (B9CY100_2223_TMD2) Team project made by -
-🌟 Aman Utkhedkar - 10632368@mydbs.ie
-🌟 Prathmesh Prakash Salunke - 10613985@mydbs.ie
+#🌟 Aman Utkhedkar - 10632368@mydbs.ie
+#🌟 Prathmesh Prakash Salunke - 10613985@mydbs.ie
 
 # 📝 Description
 The project is focused on advanced programming techniques and aims to showcase the skills and knowledge gained during the course. It involves implementing a complex program that demonstrates advanced concepts such as Python, Flask API, backend as PostgreSQL datbase.
