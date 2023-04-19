@@ -113,6 +113,10 @@ def login():
 def send_js(path):
     return send_from_directory('static/js', path)
 
+@app.route('/thank')
+def thank():
+    return render_template('thank.html')
+
 #Contact form Connection
 @app.route('/cont', methods=['GET', 'POST'])
 def cont():
@@ -137,7 +141,7 @@ def cont():
         conn.close()
 
         # Redirect to a thank-you page
-        return render_template('thank.html')
+        return redirect(url_for('thank'))
     else:
         # If the form hasn't been submitted, render the contact page
         return render_template('contact.html')
@@ -155,7 +159,7 @@ def signin():
 def contact():
     return redirect(url_for("contact_page"))
 
-@app.route("/contact-page")
+@app.route("/contact_page")
 def contact_page():
     return render_template("contact.html")
 
